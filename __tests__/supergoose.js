@@ -11,7 +11,7 @@ module.exports = require('supertest');
 
 let mongoServer;
 
-async function startDB() {
+async function startDB() { 
   mongoServer = new MongoMemoryServer();
 
   const mongoUri = await mongoServer.getConnectionString();

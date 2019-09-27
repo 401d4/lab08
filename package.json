@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose"
+    "test-watch": "jest --watchAll --verbose",
+    "start": "nodemon ."
   },
   "jest": {
     "testEnvironment": "node"
@@ -14,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
@@ -22,6 +24,7 @@
     "mongoose": "^5.6.1",
     "mongoose-schema-jsonschema": "^1.2.1",
     "morgan": "^1.9.1",
+    "nodemon": "^1.19.2",
     "supertest": "^4.0.2",
     "uuid": "^3.3.2"
   }
