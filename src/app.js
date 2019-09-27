@@ -10,9 +10,9 @@ const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
 
 // Models
-// TODO: Pull these in (or create them)!
-const Products = require('./models/products.js');
-const products = new Products();
+
+// const Products = require('./models/products.js');
+// const products = new Products();
 
 const Categories = require('./models/categories.js');
 const categories = new Categories();
@@ -27,20 +27,23 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-// Routes
+// Routes (categories)
 app.get('/api/v1/categories', getCategories);
 app.post('/api/v1/categories', postCategories);
+
 app.get('/api/v1/categories/:id', getCategory);
 app.put('/api/v1/categories/:id', putCategories);
 app.delete('/api/v1/categories/:id', deleteCategories);
 
+// Routes (products)
 app.get('/api/v1/products', getProducts);
 app.post('/api/v1/products', postProducts);
+
 app.get('/api/v1/products/:id', getProduct);
 app.put('/api/v1/products/:id', putProducts);
 app.delete('/api/v1/products/:id', deleteProducts);
 
-// Catchalls
+// Middleware
 app.use(notFound);
 app.use(errorHandler);
 
@@ -67,7 +70,7 @@ function getCategory(request,response,next) {
 
 function postCategories(request,response,next) {
   // expects the record that was just added to the database
-  categories.post(request.body)
+  categories.create(request.body)
     .then( result => response.status(200).json(result[0]) )
     .catch( next );
 }
