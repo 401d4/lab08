@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose",
-    "start": "nodemon ."
+    "start": "nodemon .",
+    "lint": "eslint"
   },
   "jest": {
     "testEnvironment": "node"
