@@ -7,7 +7,7 @@
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose",
     "start": "nodemon .",
-    "lint": "eslint"
+    "lint": "eslint **/*.js"
   },
   "jest": {
     "testEnvironment": "node"
